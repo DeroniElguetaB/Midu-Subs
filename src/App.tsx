@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import List from './components/List';
 import Form from './components/Form';
+import Sub from './types';
 
 const INITIAL_STATE = [
     {
@@ -22,12 +23,6 @@ interface AppState{
     newSubsNumber: number
 } 
 
-interface Sub{
-    nick: string,
-    subMonths: number,
-    avatar: string,
-    description?: string
-}
 // const subscriptores: Sub [] = []
 // subscriptores.push(subscriptor1, subscriptor2)
 
@@ -47,7 +42,7 @@ function App() {
     <div className="App">
       <h1>Midu Subs</h1>
         <List subs={subs}/>
-        <Form />
+        <Form onNewSub={setSubs}/>
     </div>
   );
 }
